@@ -132,7 +132,41 @@ body {
 	color:#fff;
 	opacity: 0.7;
 }
+
+
 /* END HOME PAGE */
+
+
+/*MENU-CATEGORIES*/
+.category-tile
+{
+  position: relative;
+  border :2px solid #3F0C1F;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  margin:0 auto 15px;
+}
+.category-tile span
+{
+  position: absolute;
+  bottom: 0;
+  right: 0PX;
+  width: 100%;
+  text-align: center;
+  font-size: 1.7em;
+  text-transform: uppercase;
+  background-color: #000;
+  color:#fff;
+  opacity: 0.7;
+
+}
+.category-tile:hover
+{
+    box-shadow: 0 1px 5px 1px white;
+}
+/*End Menu Page*/
+
 /*    FOOTER      */
 .panel-footer
 {
@@ -282,6 +316,28 @@ body {
     font-size: .7em;
     letter-spacing: .1em;
     text-transform: uppercase;
+  }
+/*    Super Extra Small  */
+  @media(max-width: 479px)
+  {
+    .navbar-brand h1 /*Resturant name*/
+    {
+      padding-top: 5px;
+      font-size: 6vw;
+    }
+    #menu-tile,#special-tile
+    {
+      width: 280px;
+      margin: 0 auto 15px;
+    }
+    .col-xxs-12
+    {
+      position: relative;
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-bottom: 5px;
+    }
   }
   /* End Header */
 /* FOOTER */
