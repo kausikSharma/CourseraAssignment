@@ -167,6 +167,68 @@ body {
 }
 /*End Menu Page*/
 
+/* START SINGLE-PAGES */
+#main-content h2
+{
+  font-size: 2.5em;
+  margin-bottom: 50px;
+  color: #02F8CF ;
+}
+.menu-item-tile
+{
+  margin-bottom: 25px;
+}
+.menu-item-tile hr
+{
+  width: 80%;
+}
+.menu-item-tile .menu-item-price
+{
+  font-size: 1.1em;
+  text-align: right;
+  margin-top: -15px;
+  margin-right:  -19px;
+
+}
+.menu-item-photo
+{
+  position:relative;
+  border:2px solid white;
+  overflow:hidden;
+  padding:0;
+  margin-right:-20px;
+  margin-left:auto;
+  margin-bottom:20px;
+  max-width:250px;
+}
+.menu-item-photo img
+{
+  height:150px;
+  width:250px;
+}
+.menu-item-photo div
+{
+  position:absolute;
+  bottom:0;
+  right:0;
+  width:50px;
+  background-color:green;
+  text-align:center;
+}
+.menu-description .menu-item-title
+{
+  color: #24F802
+}
+.menu-item-tile .left-content
+{
+  float: left;
+}
+.menu-item-tile .right-content
+{
+  float: right;
+}
+/* END SINGLE-PAGE DESIGN */ 
+
 /*    FOOTER      */
 .panel-footer
 {
@@ -317,6 +379,19 @@ body {
     letter-spacing: .1em;
     text-transform: uppercase;
   }
+  .menu-item-photo
+{
+  margin-right: auto;
+}
+.menu-item-tile .menu-item-price
+{
+  text-align: center;
+}
+.menu-description .menu-item-title
+{
+  text-align: center;
+  color: #24F802
+}
 /*    Super Extra Small  */
   @media(max-width: 479px)
   {
