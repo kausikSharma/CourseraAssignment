@@ -1,0 +1,61 @@
+
+{% extends 'adminOwn/adminOwn_home.html' %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+
+	</script>
+
+</head>
+
+<body>
+{% block content %}
+<div class="row">
+	<div class="col-md-12 ">
+		<div class="customDiv">
+				<div class="box_design">
+
+					<form action="/books/insertvalidation">
+						<label for="book_insert1" class="book_txt" id="book_txt1">Enter Book Id:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+							<input type="text" name="book_acc" id="book_insert1" class="book_insert" placeholder="Enter Book Acc_No" required>
+						</label>
+
+						<br>
+
+						<label for="book_insert2" class="book_txt">Enter Book Name:
+							<input type="text" name="book_title" id="book_insert2" class="book_insert" placeholder="Enter Book Title" required>
+						</label>
+						<br>
+
+						<label for="book_insert3" class="book_txt">Enter Book Author:
+							<input type="text" name="book_author" id="book_insert3" class="book_insert" placeholder="Enter Book Author" required>
+						</label>
+						<br>
+						<br>
+						<input type="submit" name="" class="btn btn-primary btn-block" value="Add" id="button" onmouseover="button_effect1()" onmouseout="button_effect2()">
+
+					</form>
+					
+				</div>
+				<div class="board">
+					{% for msg in  messages %}
+					<h1 style="color: white">{{msg}}</h1>
+					{% endfor %}
+					
+				</div>				
+		</div>
+	</div>
+
+</div>
+{% endblock %}
+
+</body>
+</html>
+
+
+
+
+

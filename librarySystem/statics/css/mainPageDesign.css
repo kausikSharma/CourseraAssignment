@@ -1,0 +1,101 @@
+#log_in
+{
+	font-size: 20px;
+	float: right;
+	color:#03fc41;
+}
+
+#log_out
+{
+	font-size: 20px;
+	float: right;
+	color: red;
+}
+#left_header
+{
+	font-size: 20px;
+	float:left;
+	color: #0f03fc;
+}
+.navBarElements
+{
+	font-size: 20px;
+	float: left;
+}
+
+.customDiv
+{
+	background-color: #CB146D ;
+	text-align: center;
+	font-size: large;
+	min-height: 100vh;
+
+}
+.row
+{
+	background-color: #CB146D;
+
+	
+}
+.box_design
+{
+	min-height: auto;
+	border:2px solid red;
+	box-shadow:10px 2px 20px   cyan;
+	margin-top: 80px;
+	margin-left: 300px;
+	margin-right: 200px;
+	text-align: center;
+
+
+}
+.board
+{
+	min-height: 100px;
+	border:2px solid red;
+	box-shadow:10px 2px 20px   cyan;
+	margin-top: 20px;
+	margin-left: 300px;
+	margin-right: 200px;
+	margin-bottom:60px;
+	text-align: center;
+
+}
+.book_insert
+{
+	padding: 2px 2px 2px 2px;
+	margin-top: 5px;
+	border:1px solid black;
+	font-family: sans-serif;
+}
+.book_txt
+{
+	color: #000000 ;
+	opacity: 1;
+}
+#button
+{
+	background-color: #900C3F ;
+	min-width: 20px;
+	border:2px solid cyan;
+}
+.form-inline
+{
+	border-radius: 4px;
+	height: 30px;
+	background-color:#2980B9 ;
+	border:2px solid white;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #17202A ;
+  opacity: 1; /* Firefox */
+}
+
+#table_row
+{
+
+font-style: bold;
+font-weight: 900;
+background-color: yellow;
+}
+

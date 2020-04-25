@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/mainPageDesign.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'js/bootstrap.min.js' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'js/j.min.js' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+
+
+<body>
+	{% csrf_token %}
+
+<div class="header">
+	<div >
+
+		{% if user.is_authenticated %}
+		<div>
+			<span id="left_header">Hello {{user.get_full_name}}</span>&nbsp
+			<a href="/login/logout">
+				<span id="log_out"><i class="glyphicon glyphicon-log-out"></i>&nbsp
+				<span id="log_out">Log out</span>					
+				</span>
+			</a>
+
+		</div>
+		{% else %}
+
+		<div>
+			<span id="left_header">Welcome World</span>
+				<a href="/login">
+				<span id="log_in"><i class="glyphicon glyphicon-log-in"></i>&nbsp
+					<span id="log_in">Log in</span>					
+				</span>
+			</a>
+		</div>
+
+		{% endif %}		
+	</div>	
+</div>
+
+
+
+
+<div class="side-nav">
+	<nav>
+		<ul>
+			<li>
+				
+				{% if user.is_authenticated %}
+					<a href="/borrow/">
+				{% endif %}
+					<span><i class="glyphicon glyphicon-book"></i></span>
+                    <span>Borrow</span>
+ 				</a>
+			</li>
+			<li>
+				{% if user.is_authenticated %}<a href="#">{% endif %}
+					<span><i class="glyphicon glyphicon-th-list"></i></span>
+                    <span> Library</span>
+ 				</a>
+			</li>
+			<li>
+				{% if user.is_authenticated %}<a href="#">{% endif %}
+					<span><i class="glyphicon glyphicon-stats"></i></span>
+                    <span> search</span>
+ 				</a>
+			</li>
+			<li>
+				<a href="/adminOwn">
+					<span><i class="glyphicon glyphicon-credit-card"></i></span>
+                    <span>Admin</span>
+ 				</a>
+			</li>
+			<li>
+				{% if user.is_authenticated %}<a href="#">{% endif %}
+					<span><i class="glyphicon glyphicon-credit-card"></i></span>
+                    <span>About</span>
+ 				</a>
+			</li>
+
+		</ul>
+	</nav>
+	
+</div>
+
+{% block content %}
+
+
+
+{% endblock %}
+
+      </body>
+</html>

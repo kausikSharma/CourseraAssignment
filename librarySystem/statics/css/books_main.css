@@ -1,0 +1,11 @@
+.box_design
+{
+	background-color: #C43920  ;
+	min-height: 400px;
+	opacity:0.60; 
+	padding: 40px 80px 40px 80px;
+	border:2px solid ;
+	box-shadow:2px 2px 20px   black;
+	margin-top: 100px;
+	text-align: center;
+}

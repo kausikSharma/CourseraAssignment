@@ -1,0 +1,43 @@
+{% extends "base.html"%}
+
+
+
+
+{% block content %}
+
+
+
+			<div class="box_design">
+				<form action="/borrow/select_borrower">
+
+					
+					<table class="table table-hover  table-responsive">
+
+						<tr>
+							<th id="table_row">Acc No</th>
+							<th id="table_row">Book Title</th>
+							<th id="table_row">Author</th>
+							<th id="table_row"></th>
+						</tr>
+
+						{% for item in searched_data %}
+						<tr>
+							<th>{{item.acc_no}}</th>
+							<th>{{item.title}}</th>
+							<th>{{item.author}}</th>
+							<th><button type="submit" name="borrow_book" value="{{item.acc_no}}" class="btn btn-info">Borrow</button></th>
+						</tr>
+						{% endfor %}
+						
+					</table>
+					
+				</form>
+
+				
+			</div>
+		</div>
+	</div>
+</div>
+    	
+{% endblock  %}
+

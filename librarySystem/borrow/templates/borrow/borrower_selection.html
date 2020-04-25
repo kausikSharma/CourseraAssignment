@@ -1,0 +1,82 @@
+{% extends "base.html"%}
+
+
+
+
+{% block content %}
+
+<div class="row">
+	<div class="col-md-12 ">
+		<div class="customDiv" >
+
+
+		<form action="/borrow/search_user" >
+				<div class="box_design">
+						<div class="md-form active-purple active-purple-2 mb-3">
+  						<input class="form-control" type="text" placeholder="Search by         card no/ branch name......." aria-label="Search" name="user_details">
+					</div>					
+				</div>
+
+			
+				
+				<div class=box_design>
+					<table class="table table-hover  table-responsive">
+
+						<tr>
+							<th id="table_row">Acc No</th>
+							<th id="table_row">Book Title</th>
+							<th id="table_row">Author</th>
+						</tr>
+
+						{% for item in searched_data %}
+						<tr>
+							<th><input type="hidden" name="borrow_book" value="{{item.acc_no}}">{{item.acc_no}}</th>
+							<th>{{item.title}}</th>
+							<th>{{item.author}}</th>
+						</tr>
+						{% endfor %}
+						
+					</table>
+				
+				</div>
+			</form>
+
+			<div class="box_design">
+				<form action="/borrow/borrow_item">
+				{% if status == 0 %}
+					{{result}}
+
+				{% else %}
+
+					<table class="table table-hover  table-responsive">
+						<tr>
+							<th id="table_row">Card No</th>
+							<th id="table_row">User Name</th>
+							<th id="table_row">Branch</th>
+							<th id="table_row"></th>
+						</tr>
+						{% for item in searched_data %}
+							<input type="hidden" name="borrow_book" value="{{item.acc_no}}">
+						{% endfor %}
+						{% for user in result %}
+						<tr>
+							<th>{{user.card_no}}</th>
+							<th>{{user.first_name}} {{user.last_name}}</th>
+							<th>{{user.department}}</th>
+							<th><button type="submit" name="allotment" value="{{user.card_no}}" class="btn btn-info">Allot</button></th>
+						</tr>
+						{% endfor %}
+						
+					</table>
+				{% endif %}
+			</form>	
+			</div>
+
+				
+			</div>
+		</div>
+	</div>
+</div>
+    	
+{% endblock  %}
+

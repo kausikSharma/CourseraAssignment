@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+		function button_effect1()
+		{
+			var x=document.getElementById("button");
+			x.style.backgroundColor="#C70039 ";
+		}
+		function button_effect2()
+		{
+			var x=document.getElementById("button")
+			x.style.backgroundColor="#CB146D";
+		}
+</script>
+
+	<title></title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/mainPageDesign.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'js/bootstrap.min.js' %}">
+	<script src="{% static 'js/j.min.js' %}"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+
+
+<body>
+	{% csrf_token %}
+
+<div class="header">
+	<div >
+
+		{% if user.is_authenticated %}
+		<div>
+			<span id="left_header">Hello {{user.get_full_name}}</span>&nbsp
+			<a href="/login/logout">
+				<span id="log_out"><i class="glyphicon glyphicon-log-out"></i>&nbsp
+				<span id="log_out">Log out</span>					
+				</span>
+			</a>
+
+		</div>
+		{% else %}
+
+		<div>
+			<span id="left_header">Welcome World</span>
+				<a href="/login">
+				<span id="log_in"><i class="glyphicon glyphicon-log-in"></i>&nbsp
+					<span id="log_in">Log in</span>					
+				</span>
+			</a>
+		</div>
+
+		{% endif %}		
+	</div>	
+</div>
+
+
+
+
+<div class="side-nav">
+	<nav>
+		<ul>
+
+			<li>
+				<a href="/adminOwn/librarian_reg">
+					<span><i class="glyphicon glyphicon-king"  ></i></span>
+                    <span  >&nbspLibrarian Registration</span>
+ 				</a>
+			</li>
+			<li >
+				<a>
+					<span><i class="glyphicon glyphicon-queen" style="color:yellow"></i></span>
+                    <span style="color:yellow"> &nbspUser Registration</span>
+ 				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span><i class="glyphicon glyphicon-knight"></i></span>
+                    <span>&nbspSupplier Registration</span>
+ 				</a>
+			</li>
+			<li>
+				<a href="/adminOwn">
+					<span><i class="glyphicon glyphicon-menu-left"></i></span>
+                    <span>&nbspBack</span>
+ 				</a>
+			</li>
+
+		</ul>
+	</nav>
+	
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="customDiv">
+				<div class="box_design">
+
+					<form action="/libuser/libuser_formValidation" method="post" class="form-group ">
+					{% csrf_token %}
+
+						<div class="form-group">
+							<label for="lib_id" class="book_txt" id="book_txt1">
+								Enter Card No:
+								<input type="text" name="cardno" id="lib_id" class="book_insert  form-inline" placeholder="Enter card number" required>
+							</label>
+
+							<br>
+							
+						</div>
+
+						<div class="form-group">
+							<label for="lib_fname" class="book_txt">Enter First Name:
+								<input type="text" name="fname" id="lib_fname" class="book_insert form-inline" placeholder="Enter First Name" required>
+							</label>
+							<br>
+							
+						</div>
+
+						<div class="form-group">
+							<label for="lib_lname" class="book_txt">Enter Last Name:
+								<input type="text" name="lname" id="lib_lname" class="book_insert form-inline" placeholder="Enter Last Name" required>
+							</label>
+							<br>
+						</div>
+					
+						<div class="form-group">
+							<label class="book_txt">Select Gender:</label>
+
+							<label class="radio-inline " for="male">
+								<input type="radio" id="male" name="gender" value="male" checked>Male</label>
+							<label class="radio-inline" for="female">
+								<input type="radio" id="female" name="gender" value="female">Female</label>
+
+							<label class="radio-inline" for="other">
+								<input type="radio" id="other" name="gender" value="other">Other</label>
+
+							<br>
+							
+						</div>
+						<div class="form-group">
+							  <label for="sel" class="book_txt " >Select Branch:</label>
+  							<select name="branch" id="sel" class="form-inline">
+    							<option value="CSE" class="book_txt">CSE</option>
+    							<option value="IT">IT</option>
+    							<option value="ECE">ECE</option>
+   								<option value="EE">EE</option>
+   								<option value="MCA">MCA</option>
+  							</select>
+							
+						</div>
+						<div class="form-group">
+							<label for="ph" class="book_txt">Enter Last Name:
+								<input type="number" name="ph" id="ph" class="book_insert form-inline" placeholder="Enter Phone number" required>
+							</label>
+							<br>
+						</div>
+						
+
+
+	
+
+						<input type="submit" name="" class="btn btn-primary btn-block" value="Add" id="button" onmouseover="button_effect1()" onmouseout="button_effect2()">
+
+					</form>
+					
+				</div>
+				<div class="board">
+					{% for msg in  messages %}
+					<h1 style="color: white">{{msg}}</h1>
+					{% endfor %}
+					
+				</div>				
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
